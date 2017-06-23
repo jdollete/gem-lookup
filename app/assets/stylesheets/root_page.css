@@ -1,0 +1,10 @@
+body, html {
+  height: 100%;
+}
+
+.left-section {
+  background-image: url("map.png");
+  width: 450px;
+  height: 100%;
+  float: left;
+}
