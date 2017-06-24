@@ -19,11 +19,23 @@ $( document ).ready(function() {
         var gemLink = data.gem_uri;
         var gemDepencies = [];
 
-        if (data.dependencies.development !== 0) {
+        if (data.dependencies.development.length !== 0) {
           data.dependencies.development.forEach(function(element) {
             gemDepencies.push(element.name);
           });
         }
+
+        $(".gem-information").append("<div class='request-output'><div>" + gemName + "</div><div><div>INFORMATION</div><div>" + gemDescription + "</div><div class='dependencies'>DEPENDENCIES</div></div>");
+
+        function appendDependencies() {
+          if (gemDepencies.length !== 0) {
+            gemDepencies.forEach(function(element) {
+              $(".dependencies").append("<p>" + element + "</p>");
+            });
+          }
+        }
+
+        appendDependencies();
 
       },
       error: function (error) {
