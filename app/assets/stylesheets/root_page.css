@@ -5,7 +5,10 @@ body, html {
 .left-section {
   display: inline-block;
   background-image: url("map.png");
-  width: 450px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 40%;
   height: 100%;
   float: left;
 }
