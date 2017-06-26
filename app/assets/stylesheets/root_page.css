@@ -5,15 +5,21 @@ body, html {
 .left-section {
   display: inline-block;
   background-image: url("map.png");
-  width: 450px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 40%;
   height: 100%;
   float: left;
 }
 
-.right-section {
+.search-section {
   display: inline-block;
   vertical-align: top;
+  font-family: helvetica;
+  padding-left: 120px;
   float: left;
+  width: 55%;
   height: 100%;
 
 }
@@ -21,9 +27,8 @@ body, html {
 .logo {
   display: block;
   float: right;
-  color: white;
-  font-weight: bold;
-  padding: 30px;
+  padding-top: 30px;
+  padding-right: 35px;
 }
 
 .tabs {
@@ -33,6 +38,39 @@ body, html {
   top: 50%;
   transform: translateY(-50%);
   color: white;
+}
+
+.title {
+  padding: 25px;
+}
+
+#search input[type="text"] {
+  background: url("magnifying-glass.png") no-repeat right;
+  background-position: 95%;
+  border: 1px solid #2C2F33;
+  font: 18px ,Helvetica;
+  color: #5F5F5F;
+  width: 90%;
+  min-width: 200px;
+  height: 50px;
+  padding: 6px 15px 6px 35px;
+  margin-bottom: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+}
+
+#submit-button {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+}
+
+.content {
+  margin-top: 150px;
+  /*border-style: solid;
+  border-color: red;*/
 }
 
 .gem-description {

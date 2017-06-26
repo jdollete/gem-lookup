@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-  $("#search").click(function(event) {
+  $("#submit-button").click(function(event) {
     event.preventDefault();
     var gemSearch = $("form input").val();
     $(".request-output").remove();
