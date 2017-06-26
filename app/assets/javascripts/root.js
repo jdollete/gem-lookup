@@ -12,7 +12,7 @@ $( document ).ready(function() {
       success: function (data) {
         var gemName = data.name;
         var gemDescription = data.info;
-        var gemLink = data.gem_uri;
+        var gemLink = data.project_uri;
         var gemDepencies = [];
 
         function appendDependencies() {
@@ -29,7 +29,7 @@ $( document ).ready(function() {
           });
         }
 
-        $(".gem-information").append("<div class='request-output'><div>" + gemName + "</div><div><div>INFORMATION</div><div class='gem-description'>" + gemDescription + "</div><div class='dependencies'>DEPENDENCIES</div></div>");
+        $(".gem-information").append("<div class='request-output'><div class='gem-name'><a href=" + gemLink + " target='_blank'>" + gemName + "</a></div><div><div>INFORMATION</div><div class='gem-description'>" + gemDescription + "</div><div class='dependencies'>DEPENDENCIES</div></div>");
 
         appendDependencies();
 

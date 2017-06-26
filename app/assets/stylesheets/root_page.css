@@ -69,10 +69,20 @@ body, html {
 
 .content {
   margin-top: 150px;
+  font-size: 15px;
   /*border-style: solid;
   border-color: red;*/
 }
 
 .gem-description {
   word-wrap: break-word;
+}
+
+.request-output {
+  padding-left: 25px;
+}
+
+.gem-name {
+  padding-bottom: 40px;
+  font-size: 18px;
 }
