@@ -37,7 +37,20 @@ body, html {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.tabs a {
+  display: block;
+  padding: 15px 50px 15px 15px;
+}
+
+.tabs a:link, .tabs a:visited {
   color: white;
+}
+
+.tabs a:hover {
+  text-decoration: none;
+  background-color:rgba(252, 255, 252, 0.5);
 }
 
 .title {
