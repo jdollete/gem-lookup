@@ -1,7 +1,7 @@
 $( document ).ready(function() {
   $("#submit-button").click(function(event) {
     event.preventDefault();
-    var gemSearch = $("form input").val();
+    var gemSearch = $("form input").val().toLowerCase();
     $(".request-output").remove();
 
     $.ajax({
