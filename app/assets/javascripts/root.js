@@ -1,8 +1,11 @@
 $( document ).ready(function() {
   $("#submit-button").click(function(event) {
     event.preventDefault();
+
     var gemSearch = $("form input").val().toLowerCase();
+
     $(".request-output").remove();
+    $("#search-field").removeClass("not-found-field");
 
     $.ajax({
       type: "GET",
@@ -12,7 +15,7 @@ $( document ).ready(function() {
       success: function (data) {
         var gemName = data.name;
         var gemDescription = data.info;
-        var gemLink = data.gem_uri;
+        var gemLink = data.project_uri;
         var gemDepencies = [];
 
         function appendDependencies() {
@@ -20,6 +23,10 @@ $( document ).ready(function() {
             gemDepencies.forEach(function(element) {
               $(".dependencies").append("<p>" + element + "</p>");
             });
+          }
+
+          else {
+            $(".dependencies").append("<p>None</p>");
           }
         }
 
@@ -29,7 +36,7 @@ $( document ).ready(function() {
           });
         }
 
-        $(".gem-information").append("<div class='request-output'><div>" + gemName + "</div><div><div>INFORMATION</div><div class='gem-description'>" + gemDescription + "</div><div class='dependencies'>DEPENDENCIES</div></div>");
+        $(".gem-information").append("<div class='request-output'><div class='gem-name'><a href=" + gemLink + " target='_blank'>" + gemName + "</a></div><div class='gem-information'><div><p>INFORMATION</p></div><div>" + gemDescription + "</div></div><div class='dependencies'><p>DEPENDENCIES<p></div></div>");
 
         appendDependencies();
 
@@ -38,7 +45,8 @@ $( document ).ready(function() {
       }
     })
     .fail(function() {
-      $(".gem-information").append("<div class='request-output'><p>Oh no! Looks like that gem can't be found.</p></div>");
+      $(".gem-information").append("<div class='request-output not-found'><p>Oh no! Looks like that gem can't be found.</p></div>");
+      $("#search-field").addClass("not-found-field");
     });
   });
 });
