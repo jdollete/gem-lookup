@@ -7,7 +7,7 @@ $( document ).ready(function() {
   else {
     $(".search-tab").addClass("tab-active");
   }
-  
+
   $("#submit-button").click(function(event) {
     event.preventDefault();
 
@@ -26,12 +26,13 @@ $( document ).ready(function() {
         var gemName = data.name;
         var gemDescription = data.info;
         var gemLink = data.project_uri;
-        var gemDepencies = [];
+        var gemDependencies = [];
 
         function appendDependencies() {
-          if (gemDepencies.length !== 0) {
-            gemDepencies.forEach(function(element) {
-              $(".dependencies").append("<p>" + element + "</p>");
+          if (gemDependencies.length !== 0) {
+            gemDependencies.forEach(function(element) {
+              var gemURl = "https://rubygems.org/gems/" + element;
+              $(".dependencies").append("<p><a href=" + gemURl + " target='_blank'>" + element + "</a></p>");
             });
           }
 
@@ -42,7 +43,7 @@ $( document ).ready(function() {
 
         if (data.dependencies.development.length !== 0) {
           data.dependencies.development.forEach(function(element) {
-            gemDepencies.push(element.name);
+            gemDependencies.push(element.name);
           });
         }
 
