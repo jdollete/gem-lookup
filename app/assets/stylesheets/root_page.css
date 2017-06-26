@@ -68,14 +68,13 @@ body, html {
 }
 
 .content {
-  margin-top: 150px;
+  margin-top: 100px;
   font-size: 15px;
-  /*border-style: solid;
-  border-color: red;*/
+  word-wrap: break-word;
 }
 
 .gem-description {
-  word-wrap: break-word;
+  /*word-wrap: break-word;*/
 }
 
 .request-output {
@@ -83,6 +82,15 @@ body, html {
 }
 
 .gem-name {
-  padding-bottom: 40px;
+  padding-bottom: 30px;
   font-size: 18px;
+}
+
+.not-found {
+  color: red;
+}
+
+.not-found-field {
+  color: red !important;
+  border-color: red !important;
 }
