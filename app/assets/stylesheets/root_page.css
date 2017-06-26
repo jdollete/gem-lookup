@@ -21,8 +21,6 @@ body, html {
 .logo {
   display: block;
   float: right;
-  color: white;
-  font-weight: bold;
   padding: 30px;
 }
 
