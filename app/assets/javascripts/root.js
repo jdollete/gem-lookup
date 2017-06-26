@@ -5,7 +5,7 @@ $( document ).ready(function() {
     var gemSearch = $("form input").val().toLowerCase();
 
     $(".request-output").remove();
-    $("#search-field").removeClass("not-found-field");
+    $("#search-field, #submit-button").removeClass("not-found-field");
 
     $.ajax({
       type: "GET",
@@ -46,7 +46,7 @@ $( document ).ready(function() {
     })
     .fail(function() {
       $(".gem-information").append("<div class='request-output not-found'><p>Oh no! Looks like that gem can't be found.</p></div>");
-      $("#search-field").addClass("not-found-field");
+      $("#search-field, #submit-button").addClass("not-found-field");
     });
   });
 });
