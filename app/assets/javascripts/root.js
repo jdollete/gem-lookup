@@ -24,6 +24,10 @@ $( document ).ready(function() {
               $(".dependencies").append("<p>" + element + "</p>");
             });
           }
+
+          else {
+            $(".dependencies").append("<p>None</p>");
+          }
         }
 
         if (data.dependencies.development.length !== 0) {
@@ -32,7 +36,7 @@ $( document ).ready(function() {
           });
         }
 
-        $(".gem-information").append("<div class='request-output'><div class='gem-name'><a href=" + gemLink + " target='_blank'>" + gemName + "</a></div><div><div>INFORMATION</div><div class='gem-description'>" + gemDescription + "</div><div class='dependencies'>DEPENDENCIES</div></div>");
+        $(".gem-information").append("<div class='request-output'><div class='gem-name'><a href=" + gemLink + " target='_blank'>" + gemName + "</a></div><div class='gem-information'><div><p>INFORMATION</p></div><div>" + gemDescription + "</div></div><div class='dependencies'><p>DEPENDENCIES<p></div></div>");
 
         appendDependencies();
 

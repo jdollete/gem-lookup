@@ -73,8 +73,8 @@ body, html {
   word-wrap: break-word;
 }
 
-.gem-description {
-  /*word-wrap: break-word;*/
+.gem-information {
+  padding-bottom: 30px;
 }
 
 .request-output {
