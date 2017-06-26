@@ -1,6 +1,16 @@
 $( document ).ready(function() {
+
+  if (window.location.pathname.includes("favorites")) {
+    $(".favorites-tab").addClass("tab-active");
+  }
+
+  else {
+    $(".search-tab").addClass("tab-active");
+  }
+  
   $("#submit-button").click(function(event) {
     event.preventDefault();
+
 
     var gemSearch = $("form input").val().toLowerCase();
 
