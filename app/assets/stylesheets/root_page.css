@@ -3,7 +3,7 @@ body, html {
 }
 
 .left-section {
-  background-image: url("map.png"); 
+  background-image: url("map.png");
   width: 450px;
   height: 100%;
   float: left;
@@ -12,4 +12,11 @@ body, html {
 .right-section {
   float: left;
   height: 100%;
+}
+
+.tabs {
+  float: right;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%)
 }
