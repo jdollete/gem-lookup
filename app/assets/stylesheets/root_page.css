@@ -39,6 +39,10 @@ body, html {
   transform: translateY(-50%);
 }
 
+.tab-active {
+  background-color:rgba(252, 255, 252, 0.2);
+}
+
 .tabs a {
   display: block;
   padding: 15px 50px 15px 15px;
