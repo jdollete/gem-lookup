@@ -3,13 +3,38 @@ body, html {
 }
 
 .left-section {
-  background-image: url("map.png"); 
+  display: inline-block;
+  background-image: url("map.png");
   width: 450px;
   height: 100%;
   float: left;
 }
 
 .right-section {
+  display: inline-block;
+  vertical-align: top;
   float: left;
   height: 100%;
+
+}
+
+.logo {
+  display: block;
+  float: right;
+  color: white;
+  font-weight: bold;
+  padding: 30px;
+}
+
+.tabs {
+  display: block;
+  float: right;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+}
+
+.gem-description {
+  word-wrap: break-word;
 }

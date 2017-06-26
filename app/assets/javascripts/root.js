@@ -29,7 +29,7 @@ $( document ).ready(function() {
           });
         }
 
-        $(".gem-information").append("<div class='request-output'><div>" + gemName + "</div><div><div>INFORMATION</div><div>" + gemDescription + "</div><div class='dependencies'>DEPENDENCIES</div></div>");
+        $(".gem-information").append("<div class='request-output'><div>" + gemName + "</div><div><div>INFORMATION</div><div class='gem-description'>" + gemDescription + "</div><div class='dependencies'>DEPENDENCIES</div></div>");
 
         appendDependencies();
 
