@@ -64,6 +64,14 @@ $( document ).ready(function() {
 
         $(".gem-information").append("<div class='request-output'><div class='gem-name'><a href=" + gemLink + " target='_blank'>" + gemName + "</a></div><div class='gem-information'><div><p>INFORMATION</p></div><div>" + gemDescription + "</div></div><div class='dependencies'><p>DEPENDENCIES<p></div></div>");
 
+        if (localStorage[gemName] === undefined) {
+
+          $(".gem-name").append("<img class='star' src=" + "<%= asset_url('star-gray.png') %>" + ">");
+        }
+        else {
+          $(".gem-name").append("<img class='star' src=" + "<%= asset_url('star-blue.png') %>" + ">");
+        }
+
         appendDependencies();
 
       },
