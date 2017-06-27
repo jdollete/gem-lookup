@@ -24,6 +24,17 @@ body, html {
 
 }
 
+.favorites-section {
+  display: inline-block;
+  vertical-align: top;
+  font-family: helvetica;
+  padding-left: 75px;
+  float: left;
+  width: 60%;
+  height: 100%;
+
+}
+
 .logo {
   display: block;
   float: right;
@@ -119,4 +130,26 @@ body, html {
 .star {
   margin-left: 10px;
   cursor: pointer;
+}
+
+.favorites-list {
+  margin-top: 20px;
+  -moz-column-count: 3;
+  -moz-column-gap: 50px;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 50px;
+  column-count: 3;
+  column-gap: 50px;
+
+}
+
+.favorites-list ul {
+  list-style: none;
+}
+
+li {
+  font-size: 15px;
+  margin-bottom: 20px;
+  white-space: nowrap;
+
 }
