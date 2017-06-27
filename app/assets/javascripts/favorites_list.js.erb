@@ -1,0 +1,17 @@
+$( document ).ready(function() {
+
+
+  if (localStorage["localStorageGems"].length >= 1) {
+    var currentLocalStorageGems = localStorage["localStorageGems"].split(',');
+  }
+
+  function generateListArray() {
+    currentLocalStorageGems.forEach(function(gemName) {
+      gemLinkList = localStorage[gemName];
+      $(".favorites-list ul").append("<li><a href=" + gemLinkList + " target='_blank'>" + gemName + "</a></li>");
+    })
+  }
+
+  generateListArray();
+
+});
