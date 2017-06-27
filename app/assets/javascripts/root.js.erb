@@ -30,16 +30,22 @@ $( document ).ready(function() {
 
         function appendDependencies() {
           if (gemDependencies.length !== 0) {
+            var i = 0;
             gemDependencies.forEach(function(element) {
               var gemURl = "https://rubygems.org/gems/" + element;
-              $(".dependencies").append("<p class='dependency-gem'><a href=" + gemURl + " target='_blank'>" + element + "</a></p>");
+              var currentSelector = ".dep-" + i;
+
+              $(".dependencies").append("<p class='dependency-gem dep-" + i + "' ><a href=" + gemURl + " target='_blank'>" + element + "</a></p>");
 
               if (localStorage[element] === undefined) {
-                $(".dependency-gem").append("<img src=" + "<%= asset_url('star-gray.png') %>" + ">");
+
+                $(currentSelector).append("<img class='star' src=" + "<%= asset_url('star-gray.png') %>" + ">");
               }
               else {
-                $(".dependency-gem").append("<img src=" + "<%= asset_url('star-blue.png') %>" + ">");
+                $(currentSelector).append("<img class='star' src=" + "<%= asset_url('star-blue.png') %>" + ">");
               }
+
+              i += 1;
 
             });
 
