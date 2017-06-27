@@ -25,7 +25,11 @@ $( document ).ready(function() {
         localStorage[gemName] = gemLink;
       }
       else {
+        var index = currentLocalStorageGems.indexOf(gemName)
+
         $(this).attr("src", "<%= asset_url('star-gray.png') %>");
+        currentLocalStorageGems.splice(index, 1)
+        localStorage.setItem("localStorageGems", currentLocalStorageGems)
         localStorage.removeItem(gemName);
       }
     });
