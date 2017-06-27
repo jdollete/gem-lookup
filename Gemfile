@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
-gem 'pg', '~> 0.18'
+gem 'pg', '~> 0.20'
 # Use sqlite3 as the database for Active Record
 gem 'puma', '~> 3.0'
 # gem 'sqlite3'
