@@ -87,7 +87,7 @@ GEM
     multi_json (1.12.1)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
-    pg (0.21.0)
+    pg (0.20.0)
     puma (3.8.1)
     rack (1.6.8)
     rack-test (0.6.3)
@@ -165,7 +165,7 @@ DEPENDENCIES
   gems
   jbuilder (~> 2.0)
   jquery-rails
-  pg (~> 0.18)
+  pg (~> 0.20)
   puma (~> 3.0)
   rails (= 4.2.5)
   sass-rails (~> 5.0)
