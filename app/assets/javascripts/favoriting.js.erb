@@ -1,39 +1,34 @@
-$( document ).ready(function() {
+$( document ).ajaxComplete(function() {
 
-  $( document ).ajaxComplete(function() {
+  $( ".star" ).click(function(event) {
+    event.preventDefault();
 
-    $(".star").click(function(event) {
-      event.preventDefault();
+    var $gemName = $( this ).prev().text();
+    var $gemLink = $( this ).prev().attr("href");
 
-      var gemName = $(this).prev().text();
-      var gemLink = $(this).prev().attr("href");
+    if (localStorage["localStorageGems"].length >= 1) {
+      var currentLocalStorageGems = localStorage["localStorageGems"].split(',');
+    }
 
-      if (localStorage["localStorageGems"].length >= 1) {
-        var currentLocalStorageGems = localStorage["localStorageGems"].split(',');
-      }
-
-      if (localStorage[gemName] === undefined) {
-        $(this).attr("src", "<%= asset_url('star-blue.png') %>");
-        if (typeof currentLocalStorageGems === "object") {
-          currentLocalStorageGems.push(gemName);
-          currentLocalStorageGems.join(",");
-          localStorage.setItem("localStorageGems", currentLocalStorageGems)
-        }
-        else{
-          localStorage.setItem("localStorageGems", gemName)
-        }
-        localStorage[gemName] = gemLink;
-      }
-      else {
-        var index = currentLocalStorageGems.indexOf(gemName)
-
-        $(this).attr("src", "<%= asset_url('star-gray.png') %>");
-        currentLocalStorageGems.splice(index, 1)
+    if ( localStorage[$gemName] === undefined ) {
+      $( this ).attr( "src", "<%= asset_url('star-blue.png') %>" );
+      if ( typeof currentLocalStorageGems === "object" ) {
+        currentLocalStorageGems.push($gemName);
+        currentLocalStorageGems.join(",");
         localStorage.setItem("localStorageGems", currentLocalStorageGems)
-        localStorage.removeItem(gemName);
       }
-    });
+      else{
+        localStorage.setItem("localStorageGems", $gemName)
+      }
+      localStorage[$gemName] = $gemLink;
+    }
+    else {
+      var index = currentLocalStorageGems.indexOf($gemName)
 
+      $( this ).attr( "src", "<%= asset_url('star-gray.png') %>" );
+      currentLocalStorageGems.splice(index, 1)
+      localStorage.setItem("localStorageGems", currentLocalStorageGems)
+      localStorage.removeItem($gemName);
+    }
   });
-
 });

@@ -7,24 +7,24 @@ $( document ).ready(function() {
   function generateListArray() {
     currentLocalStorageGems.forEach(function(gemName) {
       gemLinkList = localStorage[gemName];
-      $(".favorites-list ul").append("<li><img class='star-list' src=" + "<%= asset_url('star-blue.png') %>" + "><a href=" + gemLinkList + " target='_blank'>" + gemName + "</a></li>");
+      $( ".favorites-list ul" ).append( "<li><img class='star-list' src=" + "<%= asset_url('star-blue.png') %>" + "><a href=" + gemLinkList + " target='_blank'>" + gemName + "</a></li>" );
     })
   }
 
   generateListArray();
 
-  $(".star-list").click(function(event) {
+  $( ".star-list" ).click(function(event) {
     event.preventDefault();
 
-    var gemName = $(this).next().text();
+    var $gemName = $( this) .next().text();
     var currentLocalStorageGems = localStorage["localStorageGems"].split(',');
-    var index = currentLocalStorageGems.indexOf(gemName)
+    var index = currentLocalStorageGems.indexOf($gemName)
 
     currentLocalStorageGems.splice(index, 1)
     localStorage.setItem("localStorageGems", currentLocalStorageGems)
-    localStorage.removeItem(gemName);
-    $(this).next().remove();
-    $(this).remove();
+    localStorage.removeItem($gemName);
+    $( this ).next().remove();
+    $( this ).remove();
 
 
   });
