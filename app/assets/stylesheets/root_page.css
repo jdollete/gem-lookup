@@ -132,7 +132,14 @@ body, html {
   cursor: pointer;
 }
 
+.star-list {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
 .favorites-list {
+  position: absolute;
+  float: left;
   margin-top: 20px;
   -moz-column-count: 3;
   -moz-column-gap: 50px;
