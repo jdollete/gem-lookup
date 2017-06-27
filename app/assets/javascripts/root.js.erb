@@ -5,26 +5,26 @@ $( document ).ready(function() {
   }
 
   else {
-    $(".search-tab").addClass("tab-active");
+    $( ".search-tab" ).addClass("tab-active");
   }
 
   if (localStorage["localStorageGems"] === undefined) {
     localStorage.setItem("localStorageGems", "")
   }
 
-  $("#submit-button").click(function(event) {
+  $( "#submit-button" ).click(function(event) {
     event.preventDefault();
 
 
-    var gemSearch = $("form input").val().toLowerCase();
+    var $gemSearch = $( "form input" ).val().toLowerCase();
 
-    $(".request-output").remove();
-    $("#search-field, #submit-button").removeClass("not-found-field");
+    $( ".request-output" ).remove();
+    $( "#search-field, #submit-button" ).removeClass( "not-found-field" );
 
     $.ajax({
       type: "GET",
       dataType: "json",
-      url: "https://rubygems.org/api/v1/gems/" + gemSearch + ".json",
+      url: "https://rubygems.org/api/v1/gems/" + $gemSearch + ".json",
 
       success: function (data) {
         var gemName = data.name;
@@ -33,20 +33,20 @@ $( document ).ready(function() {
         var gemDependencies = [];
 
         function appendDependencies() {
-          if (gemDependencies.length !== 0) {
+          if ( gemDependencies.length !== 0 ) {
             var i = 0;
             gemDependencies.forEach(function(element) {
               var gemURl = "https://rubygems.org/gems/" + element;
               var currentSelector = ".dep-" + i;
 
-              $(".dependencies").append("<p class='dependency-gem dep-" + i + "' ><a href=" + gemURl + " target='_blank'>" + element + "</a></p>");
+              $( ".dependencies" ).append( "<p class='dependency-gem dep-" + i + "' ><a href=" + gemURl + " target='_blank'>" + element + "</a></p>" );
 
               if (localStorage[element] === undefined) {
 
-                $(currentSelector).append("<img class='star' src=" + "<%= asset_url('star-gray.png') %>" + ">");
+                $( currentSelector ).append( "<img class='star' src=" + "<%= asset_url('star-gray.png') %>" + ">" );
               }
               else {
-                $(currentSelector).append("<img class='star' src=" + "<%= asset_url('star-blue.png') %>" + ">");
+                $( currentSelector ).append( "<img class='star' src=" + "<%= asset_url('star-blue.png') %>" + ">" );
               }
 
               i += 1;
@@ -56,24 +56,24 @@ $( document ).ready(function() {
           }
 
           else {
-            $(".dependencies").append("<p>None</p>");
+            $( ".dependencies" ).append( "<p>None</p>" );
           }
         }
 
-        if (data.dependencies.development.length !== 0) {
+        if ( data.dependencies.development.length !== 0 ) {
           data.dependencies.development.forEach(function(element) {
             gemDependencies.push(element.name);
           });
         }
 
-        $(".gem-information").append("<div class='request-output'><div class='gem-name'><a href=" + gemLink + " target='_blank'>" + gemName + "</a></div><div class='gem-information'><div><p>INFORMATION</p></div><div>" + gemDescription + "</div></div><div class='dependencies'><p>DEPENDENCIES<p></div></div>");
+        $( ".gem-information" ).append( "<div class='request-output'><div class='gem-name'><a href=" + gemLink + " target='_blank'>" + gemName + "</a></div><div class='gem-information'><div><p>INFORMATION</p></div><div>" + gemDescription + "</div></div><div class='dependencies'><p>DEPENDENCIES<p></div></div>" );
 
-        if (localStorage[gemName] === undefined) {
+        if ( localStorage[gemName] === undefined ) {
 
-          $(".gem-name").append("<img class='star' src=" + "<%= asset_url('star-gray.png') %>" + ">");
+          $( ".gem-name" ).append( "<img class='star' src=" + "<%= asset_url('star-gray.png') %>" + ">" );
         }
         else {
-          $(".gem-name").append("<img class='star' src=" + "<%= asset_url('star-blue.png') %>" + ">");
+          $( ".gem-name" ).append( "<img class='star' src=" + "<%= asset_url('star-blue.png') %>" + ">" );
         }
 
         appendDependencies();
@@ -83,8 +83,8 @@ $( document ).ready(function() {
       }
     })
     .fail(function() {
-      $(".gem-information").append("<div class='request-output not-found'><p>Oh no! Looks like that gem can't be found.</p></div>");
-      $("#search-field, #submit-button").addClass("not-found-field");
+      $( ".gem-information" ).append( "<div class='request-output not-found'><p>Oh no! Looks like that gem can't be found.</p></div>" );
+      $( "#search-field, #submit-button" ).addClass( "not-found-field" );
     });
   });
 });
