@@ -8,6 +8,10 @@ $( document ).ready(function() {
     $(".search-tab").addClass("tab-active");
   }
 
+  if (localStorage["localStorageGems"] === undefined) {
+    localStorage.setItem("localStorageGems", "")
+  }
+
   $("#submit-button").click(function(event) {
     event.preventDefault();
 

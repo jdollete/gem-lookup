@@ -8,8 +8,20 @@ $( document ).ready(function() {
       var gemName = $(this).prev().text();
       var gemLink = $(this).prev().attr("href");
 
+      if (localStorage["localStorageGems"].length >= 1) {
+        var currentLocalStorageGems = localStorage["localStorageGems"].split(',');
+      }
+
       if (localStorage[gemName] === undefined) {
         $(this).attr("src", "<%= asset_url('star-blue.png') %>");
+        if (typeof currentLocalStorageGems === "object") {
+          currentLocalStorageGems.push(gemName);
+          currentLocalStorageGems.join(",");
+          localStorage.setItem("localStorageGems", currentLocalStorageGems)
+        }
+        else{
+          localStorage.setItem("localStorageGems", gemName)
+        }
         localStorage[gemName] = gemLink;
       }
       else {
