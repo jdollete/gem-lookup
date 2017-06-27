@@ -9,9 +9,11 @@ $( document ).ready(function() {
       var gemLink = $(this).prev().attr("href");
 
       if (localStorage[gemName] === undefined) {
+        $(this).attr("src", "<%= asset_url('star-blue.png') %>");
         localStorage[gemName] = gemLink;
       }
       else {
+        $(this).attr("src", "<%= asset_url('star-gray.png') %>");
         localStorage.removeItem(gemName);
       }
     });
