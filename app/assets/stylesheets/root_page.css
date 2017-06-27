@@ -40,13 +40,14 @@ body, html {
   float: right;
   padding-top: 30px;
   padding-right: 35px;
+  margin-left: 2000px;
 }
 
 .tabs {
   display: block;
   float: right;
   position: relative;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
 }
 
