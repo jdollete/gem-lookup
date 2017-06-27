@@ -115,3 +115,8 @@ body, html {
   color: red !important;
   border-color: red !important;
 }
+
+.star {
+  margin-left: 10px;
+  cursor: pointer;
+}
