@@ -32,8 +32,17 @@ $( document ).ready(function() {
           if (gemDependencies.length !== 0) {
             gemDependencies.forEach(function(element) {
               var gemURl = "https://rubygems.org/gems/" + element;
-              $(".dependencies").append("<p><a href=" + gemURl + " target='_blank'>" + element + "</a></p>");
+              $(".dependencies").append("<p class='dependency-gem'><a href=" + gemURl + " target='_blank'>" + element + "</a></p>");
+
+              if (localStorage[element] === undefined) {
+                $(".dependency-gem").append("<img src=" + "<%= asset_url('star-gray.png') %>" + ">");
+              }
+              else {
+                $(".dependency-gem").append("<img src=" + "<%= asset_url('star-blue.png') %>" + ">");
+              }
+
             });
+
           }
 
           else {
