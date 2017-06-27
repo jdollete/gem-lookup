@@ -73,6 +73,7 @@ body, html {
 }
 
 #search input[type="text"] {
+  outline: none;
   border: 1px solid #2C2F33;
   border-right: none;
   font: 18px ,Helvetica;
