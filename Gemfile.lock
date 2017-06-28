@@ -165,7 +165,7 @@ DEPENDENCIES
   gems
   jbuilder (~> 2.0)
   jquery-rails
-  pg (~> 0.20)
+  pg (~> 0.18)
   puma (~> 3.0)
   rails (= 4.2.5)
   sass-rails (~> 5.0)
