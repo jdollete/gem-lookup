@@ -32,6 +32,7 @@ gem 'bootstrap-sass'
 # -------------------------------
 
 # Added by Allain Dollete -------
+gem 'webpacker', '~> 2.0'
 # gem 'pry'
 # gem 'pry-byebug'
 
