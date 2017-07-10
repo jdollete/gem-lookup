@@ -34,6 +34,7 @@ gem 'bootstrap-sass'
 # Added by Allain Dollete -------
 # gem 'pry'
 # gem 'pry-byebug'
+gem 'greensock-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

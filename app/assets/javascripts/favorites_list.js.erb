@@ -12,23 +12,24 @@ $( document ).ready(function() {
   }
 
   generateListArray();
+  fadeListIn();
 
   $( ".star-list" ).click(function(event) {
     event.preventDefault();
 
-    var $gemName = $( this) .next().text();
+    var $gemName = $( this ).next().text();
     var currentLocalStorageGems = localStorage["localStorageGems"].split(',');
     var index = currentLocalStorageGems.indexOf($gemName)
 
     currentLocalStorageGems.splice(index, 1)
     localStorage.setItem("localStorageGems", currentLocalStorageGems)
     localStorage.removeItem($gemName);
-    $( this ).next().remove();
-    $( this ).remove();
 
+    $( this ).parent().fadeOut( 500, function() {
+      $( this ).next().remove();
+      $( this ).remove();
+    } );
 
   });
-
-
 
 });
