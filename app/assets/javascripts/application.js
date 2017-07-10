@@ -13,6 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require 'greensock/TweenLite'
+//= require 'greensock/TimelineLite'
+//= require 'greensock/easing/EasePack'
+//= require 'greensock/jquery.gsap.js'
 //= require root
+//= require animation
 //= require favorites_list
 //= require favoriting

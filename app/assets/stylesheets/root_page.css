@@ -216,6 +216,12 @@ li {
   white-space: nowrap;
 }
 
+@media (min-width: 768px) {
+  .favorites-list ul li {
+    opacity: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .favorites-list {
     position: absolute;
