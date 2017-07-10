@@ -24,14 +24,12 @@ $( document ).ready(function() {
     currentLocalStorageGems.splice(index, 1)
     localStorage.setItem("localStorageGems", currentLocalStorageGems)
     localStorage.removeItem($gemName);
-    
+
     $( this ).parent().fadeOut( 500, function() {
       $( this ).next().remove();
       $( this ).remove();
     } );
 
   });
-
-
 
 });
