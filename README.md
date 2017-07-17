@@ -6,10 +6,10 @@ Gem-Lookup is an application that allows users to search for Ruby Gems and see t
 
 ## MVP
 - Everything is done with Javascript including:
- - API calls to rubygems.org
- - Appending search result onto the page
- - Setting items that are starred into localStorage
- - Display Items in localStorage on Favorites landing page
- - Remove items from localStorage when it has been unstarred
+  - API calls to rubygems.org
+  - Appending search result onto the page
+  - Setting items that are starred into localStorage
+  - Display Items in localStorage on Favorites landing page
+  - Remove items from localStorage when it has been unstarred
 - Users can search Ruby Gems
 - Users can (un)favorite
